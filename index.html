@@ -4,11 +4,30 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="robots" content="noindex,nofollow">
-  <title>Vector Learning — Demo</title>
-  <meta http-equiv="refresh" content="0; url=./vector_frontend_demo.html">
-  <script>window.location.replace('./vector_frontend_demo.html');</script>
+  <meta name="theme-color" content="#0d0f13">
+  <title>Vector Learning — Investor Demo</title>
+  <style>
+    html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#0d0f13}
+    #vector-demo{display:block;width:100%;height:100%;border:0;background:#0d0f13}
+  </style>
 </head>
 <body>
-  <p>Opening the Vector Learning demo… <a href="./vector_frontend_demo.html">Continue</a></p>
+  <iframe id="vector-demo" src="./vector_frontend_demo.html" title="Vector Learning product demo"></iframe>
+  <script>
+    const frame = document.getElementById('vector-demo');
+    frame.addEventListener('load', () => {
+      try {
+        const doc = frame.contentDocument;
+        if (!doc || !doc.head) return;
+        const polish = doc.createElement('link');
+        polish.rel = 'stylesheet';
+        polish.href = './investor-polish.css?v=1';
+        doc.head.appendChild(polish);
+        doc.title = 'Vector Learning — Investor Demo';
+      } catch (_) {
+        /* Same-origin on GitHub Pages; fallback leaves the original demo intact. */
+      }
+    });
+  </script>
 </body>
 </html>
