@@ -1,4 +1,4 @@
-/* Investor-demo-only visual polish. Real application code is not used here. */
+/* Investor-demo-only visual polish. Uses only owner-uploaded thumbnails from /thumnails. */
 
 .course-card .cover {
   isolation: isolate;
@@ -9,26 +9,27 @@
 
 .course-card .cover::before {
   z-index: 2;
-  background: linear-gradient(to top, rgba(5,7,11,.96) 0%, rgba(5,7,11,.56) 38%, rgba(5,7,11,.04) 76%) !important;
+  background: linear-gradient(to top, rgba(5,7,11,.94) 0%, rgba(5,7,11,.48) 38%, rgba(5,7,11,.02) 76%) !important;
 }
 
+/* Let the real artwork lead; keep the old letter/symbol only as a very subtle accent. */
 .course-card .cover > i {
   z-index: 3;
-  inset-inline-end: 16px;
-  top: 16px;
-  width: 72px;
-  height: 72px;
+  inset-inline-end: 14px;
+  top: 14px;
+  width: 54px;
+  height: 54px;
   display: grid;
   place-items: center;
-  border: 1px solid rgba(255,255,255,.15);
-  border-radius: 20px;
-  background: rgba(7,10,15,.36);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 14px 35px rgba(0,0,0,.24);
-  font-size: 38px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 16px;
+  background: rgba(7,10,15,.28);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 12px 28px rgba(0,0,0,.20);
+  font-size: 28px;
   line-height: 1;
-  color: rgba(255,255,255,.9);
-  text-shadow: 0 8px 20px rgba(0,0,0,.35);
+  color: rgba(255,255,255,.72);
+  text-shadow: 0 6px 18px rgba(0,0,0,.35);
 }
 
 .course-card .cover-tags,
@@ -37,33 +38,33 @@
 }
 
 .course-card .cover h3 {
-  max-width: 86%;
-  text-shadow: 0 3px 18px rgba(0,0,0,.7);
+  max-width: 88%;
+  text-shadow: 0 3px 18px rgba(0,0,0,.82);
 }
 
+/* Owner-uploaded thumbnails. Four originals are intentionally reused for related cards. */
 .course-card[data-course="english"] .cover {
-  background-image: linear-gradient(to top, rgba(5,7,11,.16), transparent 62%), url('./assets/english.svg') !important;
+  background-image: url('./thumnails/reprted speech.jpg') !important;
 }
+
 .course-card[data-course="math"] .cover {
-  background-image: linear-gradient(to top, rgba(5,7,11,.16), transparent 62%), url('./assets/math.svg') !important;
+  background-image: url('./thumnails/ثمنيل رياضيات اسي 2.jpg') !important;
 }
-.course-card[data-course="physics"] .cover {
-  background-image: linear-gradient(to top, rgba(5,7,11,.16), transparent 62%), url('./assets/physics.svg') !important;
-}
+
+.course-card[data-course="physics"] .cover,
 .course-card[data-course="chemistry"] .cover {
-  background-image: linear-gradient(to top, rgba(5,7,11,.16), transparent 62%), url('./assets/chemistry.svg') !important;
+  background-image: url('./thumnails/مكثفة العلوم.jpg') !important;
 }
-.course-card[data-course="philosophy"] .cover {
-  background-image: linear-gradient(to top, rgba(5,7,11,.16), transparent 62%), url('./assets/philosophy.svg') !important;
-}
+
+.course-card[data-course="philosophy"] .cover,
 .course-card[data-course="arabic"] .cover {
-  background-image: linear-gradient(to top, rgba(5,7,11,.16), transparent 62%), url('./assets/arabic.svg') !important;
+  background-image: url('./thumnails/خدعوك فقالو.jpg') !important;
 }
 
 .featured-cover {
   background-image:
-    linear-gradient(to top, rgba(5,7,11,.94), rgba(5,7,11,.12) 70%),
-    url('./assets/english.svg') !important;
+    linear-gradient(to top, rgba(5,7,11,.92), rgba(5,7,11,.08) 72%),
+    url('./thumnails/reprted speech.jpg') !important;
   background-size: cover !important;
   background-position: center !important;
 }
@@ -71,15 +72,16 @@
 .course-card {
   box-shadow: 0 16px 44px rgba(0,0,0,.12), inset 0 1px rgba(255,255,255,.025);
 }
+
 .course-card:hover {
   box-shadow: 0 28px 78px rgba(0,0,0,.28), 0 0 0 1px rgba(198,208,255,.05);
 }
 
 @media (max-width: 720px) {
   .course-card .cover > i {
-    width: 62px;
-    height: 62px;
-    font-size: 32px;
+    width: 46px;
+    height: 46px;
+    font-size: 24px;
   }
-  .course-card .cover h3 { max-width: 90%; }
+  .course-card .cover h3 { max-width: 92%; }
 }
