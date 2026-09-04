@@ -17,10 +17,10 @@
   <script>
     (async () => {
       try {
-        const response = await fetch('./vector_frontend_demo.html?v=3', { cache: 'no-store' });
+        const response = await fetch('./vector_frontend_demo.html?v=4', { cache: 'no-store' });
         if (!response.ok) throw new Error('demo-load-failed');
         let html = await response.text();
-        const inject = '<link rel="stylesheet" href="./investor-polish.css?v=3"><meta name="robots" content="noindex,nofollow">';
+        const inject = '<link rel="stylesheet" href="./investor-polish.css?v=4"><meta name="robots" content="noindex,nofollow">';
         html = html.replace('</head>', inject + '</head>');
         document.open();
         document.write(html);
