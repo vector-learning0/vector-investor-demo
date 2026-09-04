@@ -17,11 +17,11 @@
   <script>
     (async () => {
       try {
-        const response = await fetch('./vector_frontend_demo.html?v=5', { cache: 'no-store' });
+        const response = await fetch('./vector_frontend_demo.html?v=6', { cache: 'no-store' });
         if (!response.ok) throw new Error('demo-load-failed');
         let html = await response.text();
-        const headInject = '<link rel="stylesheet" href="./investor-polish.css?v=5"><meta name="robots" content="noindex,nofollow">';
-        const bodyInject = '<script src="./investor-video.js?v=5"><\/script>';
+        const headInject = '<link rel="stylesheet" href="./investor-polish.css?v=6"><meta name="robots" content="noindex,nofollow">';
+        const bodyInject = '<script src="./investor-video.js?v=6"><\/script>';
         html = html.replace('</head>', headInject + '</head>');
         html = html.replace('</body>', bodyInject + '</body>');
         document.open();
