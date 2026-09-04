@@ -1,0 +1,178 @@
+/* Investor-demo-only visual polish. The original standalone demo remains untouched. */
+
+.course-card .cover {
+  isolation: isolate;
+  background-color: #171a21 !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.course-card .cover::before {
+  z-index: 2;
+  background:
+    linear-gradient(to top, rgba(5, 7, 11, .96) 0%, rgba(5, 7, 11, .66) 34%, rgba(5, 7, 11, .08) 74%),
+    linear-gradient(120deg, rgba(255, 255, 255, .06), transparent 45%) !important;
+}
+
+.course-card .cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: .92;
+}
+
+.course-card .cover > i {
+  z-index: 1;
+  inset-inline-end: 18px;
+  top: 18px;
+  width: 112px;
+  height: 112px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 30px;
+  background: rgba(8, 11, 17, .28);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 22px 50px rgba(0,0,0,.22), inset 0 1px rgba(255,255,255,.12);
+  font-size: 64px;
+  line-height: 1;
+  color: rgba(255,255,255,.84);
+  transform: rotate(-5deg);
+  text-shadow: 0 10px 28px rgba(0,0,0,.32);
+}
+
+[dir="rtl"] .course-card .cover > i { transform: rotate(5deg); }
+
+.course-card .cover-tags,
+.course-card .cover > div:last-child {
+  z-index: 3;
+}
+
+.course-card .cover h3 {
+  max-width: 82%;
+  text-shadow: 0 3px 18px rgba(0,0,0,.55);
+}
+
+/* English — luminous study desk / page rhythm */
+.course-card[data-course="english"] .cover {
+  background:
+    radial-gradient(circle at 18% 18%, rgba(127,169,255,.48), transparent 24%),
+    radial-gradient(circle at 78% 28%, rgba(205,221,255,.16), transparent 27%),
+    linear-gradient(135deg, #20324b 0%, #172231 46%, #0d1219 100%) !important;
+}
+.course-card[data-course="english"] .cover::after {
+  background:
+    linear-gradient(98deg, transparent 0 9%, rgba(255,255,255,.12) 9.2% 9.7%, transparent 9.9% 100%),
+    repeating-linear-gradient(0deg, transparent 0 22px, rgba(201,220,255,.09) 23px 24px),
+    linear-gradient(115deg, rgba(142,163,255,.18), transparent 38%);
+  clip-path: polygon(0 0, 67% 0, 54% 100%, 0 100%);
+}
+
+/* Mathematics — graph paper / geometry */
+.course-card[data-course="math"] .cover {
+  background:
+    radial-gradient(circle at 78% 23%, rgba(150,124,255,.30), transparent 24%),
+    linear-gradient(140deg, #2b2941 0%, #202431 49%, #11141a 100%) !important;
+}
+.course-card[data-course="math"] .cover::after {
+  background:
+    linear-gradient(45deg, transparent 47%, rgba(255,255,255,.18) 48% 49%, transparent 50%),
+    linear-gradient(-34deg, transparent 50%, rgba(198,208,255,.11) 51% 52%, transparent 53%),
+    repeating-linear-gradient(0deg, rgba(255,255,255,.04) 0 1px, transparent 1px 28px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,.04) 0 1px, transparent 1px 28px);
+}
+
+/* Physics — orbital / energy field */
+.course-card[data-course="physics"] .cover {
+  background:
+    radial-gradient(circle at 23% 34%, rgba(84,199,255,.34), transparent 22%),
+    radial-gradient(circle at 70% 12%, rgba(112,231,220,.17), transparent 25%),
+    linear-gradient(140deg, #123544 0%, #17252f 48%, #0c1318 100%) !important;
+}
+.course-card[data-course="physics"] .cover::after {
+  background:
+    radial-gradient(ellipse at 28% 43%, transparent 0 14%, rgba(151,226,255,.24) 14.6% 15.2%, transparent 15.8% 24%, rgba(151,226,255,.12) 24.6% 25.2%, transparent 25.8%),
+    radial-gradient(circle at 28% 43%, rgba(255,255,255,.88) 0 3px, transparent 4px),
+    linear-gradient(115deg, transparent 42%, rgba(255,255,255,.07), transparent 59%);
+}
+
+/* Chemistry — molecule field */
+.course-card[data-course="chemistry"] .cover {
+  background:
+    radial-gradient(circle at 14% 22%, rgba(112,227,177,.27), transparent 21%),
+    radial-gradient(circle at 82% 18%, rgba(87,181,255,.22), transparent 24%),
+    linear-gradient(135deg, #173b35 0%, #1d2930 52%, #0f1519 100%) !important;
+}
+.course-card[data-course="chemistry"] .cover::after {
+  background:
+    radial-gradient(circle at 18% 42%, rgba(185,255,226,.82) 0 8px, transparent 9px),
+    radial-gradient(circle at 38% 27%, rgba(148,210,255,.72) 0 11px, transparent 12px),
+    radial-gradient(circle at 47% 53%, rgba(255,221,160,.72) 0 7px, transparent 8px),
+    linear-gradient(35deg, transparent 17%, rgba(255,255,255,.17) 18% 18.7%, transparent 19.5% 100%);
+}
+
+/* Philosophy — editorial / classical */
+.course-card[data-course="philosophy"] .cover {
+  background:
+    radial-gradient(circle at 26% 16%, rgba(255,207,130,.22), transparent 23%),
+    linear-gradient(138deg, #403126 0%, #28242a 48%, #121217 100%) !important;
+}
+.course-card[data-course="philosophy"] .cover::after {
+  background:
+    linear-gradient(90deg, transparent 0 12%, rgba(255,235,205,.10) 12.5% 13%, transparent 13.5% 100%),
+    repeating-linear-gradient(0deg, transparent 0 17px, rgba(255,238,216,.07) 18px 19px),
+    radial-gradient(ellipse at 34% 68%, rgba(255,211,153,.13), transparent 28%);
+  clip-path: polygon(0 0, 60% 0, 72% 100%, 0 100%);
+}
+
+/* Arabic — manuscript / calligraphic rhythm */
+.course-card[data-course="arabic"] .cover {
+  background:
+    radial-gradient(circle at 22% 18%, rgba(255,177,132,.22), transparent 24%),
+    linear-gradient(138deg, #4b2d2a 0%, #2d2529 48%, #151216 100%) !important;
+}
+.course-card[data-course="arabic"] .cover::after {
+  background:
+    radial-gradient(ellipse at 24% 40%, transparent 0 10%, rgba(255,224,206,.20) 10.5% 11.5%, transparent 12% 18%, rgba(255,224,206,.10) 18.5% 19.5%, transparent 20%),
+    repeating-linear-gradient(0deg, transparent 0 25px, rgba(255,255,255,.055) 26px 27px),
+    linear-gradient(115deg, rgba(255,160,120,.10), transparent 42%);
+}
+
+/* Hero card gets a richer thumbnail-like treatment too. */
+.featured-cover {
+  background:
+    linear-gradient(to top, rgba(5,7,11,.96), rgba(5,7,11,.10) 70%),
+    radial-gradient(circle at 23% 24%, rgba(142,163,255,.42), transparent 25%),
+    radial-gradient(circle at 82% 16%, rgba(255,255,255,.13), transparent 24%),
+    linear-gradient(135deg, #28405d 0%, #1b2635 48%, #0e131a 100%) !important;
+}
+.featured-cover::before {
+  content: "";
+  position: absolute;
+  inset: 0 42% 0 0;
+  background:
+    repeating-linear-gradient(0deg, transparent 0 26px, rgba(219,230,255,.09) 27px 28px),
+    linear-gradient(100deg, rgba(255,255,255,.05), transparent 65%);
+  transform: skewX(-8deg);
+  transform-origin: bottom;
+}
+.featured-cover > * { position: relative; z-index: 2; }
+
+/* Give the cards a slightly more premium physical presence without changing layout. */
+.course-card {
+  box-shadow: 0 16px 44px rgba(0,0,0,.12), inset 0 1px rgba(255,255,255,.025);
+}
+.course-card:hover {
+  box-shadow: 0 28px 78px rgba(0,0,0,.28), 0 0 0 1px rgba(198,208,255,.05);
+}
+
+@media (max-width: 720px) {
+  .course-card .cover > i {
+    width: 92px;
+    height: 92px;
+    font-size: 52px;
+  }
+  .course-card .cover h3 { max-width: 88%; }
+}
